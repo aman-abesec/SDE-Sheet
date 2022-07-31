@@ -34,3 +34,27 @@ class Solution:
         global dp
         dp=[[-1 for i in range(m+1)] for _ in range(n+1)]
         return self.solve(grid,0,0,m,n)
+
+#Method-3(Tabulation)
+import math
+class Solution:
+    def solve(self,mat,m,n):
+        #Cornear Case
+        if m==1 and n==1:return mat[0][0]
+        dp=[[0 for __ in range(m+1)] for _ in range(n+1)]
+        for i in range(n-1,-1,-1):
+            for j in range(m-1,-1,-1):
+                if i==n-1 or j==m-1:dp[n-1][m-1]=mat[n-1][m-1]
+                d=mat[i][j]
+                if i+1<n:d+=dp[i+1][j]
+                else:d+=math.inf-200*100
+                l=mat[i][j]
+                if j+1<m:l+=dp[i][j+1]
+                else:l+=math.inf-200*100
+                dp[i][j]=min(d,l)
+        return dp[0][0]
+    def minPathSum(self, grid: List[List[int]]) -> int:
+        m=len(grid[0])
+        n=len(grid)
+        return self.solve(grid,m,n)
+    
