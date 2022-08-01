@@ -32,7 +32,9 @@ class Solution:
         m=len(grid[0])
         n=len(grid)
         global dp
-        dp=[[-1 for i in range(m+1)] for _ in range(n+1)]
+
+
+
         return self.solve(grid,0,0,m,n)
 
 #Method-3(Tabulation)
@@ -57,4 +59,3 @@ class Solution:
         m=len(grid[0])
         n=len(grid)
         return self.solve(grid,m,n)
-    
