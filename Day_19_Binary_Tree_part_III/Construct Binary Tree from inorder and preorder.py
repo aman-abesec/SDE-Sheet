@@ -3,7 +3,7 @@
 #  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 #============================================
 
-#Note Time Complxity can be reduce if we use hash_map
+#Note:>Time complexcitycan be reduce if we use hash_map
 #T-O(n^2)
 preIndex=0
 class Solution:
