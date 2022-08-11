@@ -7,7 +7,8 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         def solve(root,c,k):
             if root==None:return True
-            solve(root.left,c,k)
+            solv
+            e(root.left,c,k)
             c[0]+=1
             if c[0]==k:
                 c[1]=root
