@@ -1,4 +1,5 @@
-def floorBst(root,tar):
+
+def ceilBst(root,tar):
     ans=-1
     while root:
         if root.data==tar:
