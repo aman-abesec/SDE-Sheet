@@ -5,7 +5,7 @@
 class Solution:
     def printBoundaryView(self, root):
         def isleaf(root):
-            if root==None or root==None:return False
+            if root==None:return False
             if root.left==None and root.right==None:return True
             return False
         def addleft(root,ans):
