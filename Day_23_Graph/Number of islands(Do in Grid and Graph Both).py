@@ -3,24 +3,27 @@
 #https://leetcode.com/problems/number-of-islands/
 #================================================================
 
+#Using DfS
+from collections import deque
 class Solution:
-    def dfs(self,r,c,grid,l,w):
-        grid[r][c]="0"
-        if c+1<=w and grid[r][c+1]=="1":
-            self.dfs(r,c+1,grid,l,w)
-        if r+1<=l and grid[r+1][c]=="1":
-            self.dfs(r+1,c,grid,l,w)
-        if c-1>=0 and grid[r][c-1]=="1":
-            self.dfs(r,c-1,grid,l,w)
-        if r-1>=0 and grid[r-1][c]=="1":
-            self.dfs(r-1,c,grid,l,w)
     def numIslands(self, grid: List[List[str]]) -> int:
-        w=len(grid[0])
-        l=len(grid)
-        ans=0
-        for i in range(l):
-            for j in range(w):
-                if grid[i][j]=="1":
-                    ans+=1
-                    self.dfs(i,j,grid,l-1,w-1)
-        return ans
+        def dfs(arr,i,j,r,c):
+            arr[i][j]="0"
+            direction=[[1,0],[0,1],[-1,0],[0,-1]]
+            for d in direction:
+                m=i+d[0]
+                n=j+d[1]
+                if m<r and m>=0 and n<c and n>=0 and arr[m][n]=="1":
+                    dfs(arr,m,n,r,c)
+            
+        def solve(grid):
+            r=len(grid)
+            c=len(grid[0])
+            count=0
+            for i in range(r):
+                for j in range(c):
+                    if grid[i][j]=="1":
+                        count+=1
+                        dfs(grid,i,j,r,c)
+            return count
+        return solve(grid)
