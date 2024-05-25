@@ -1,1 +1,7 @@
-
+- Populate Next Right pointers of Tree
+- Search given Key in BST
+- Construct BST from given keys
+- Construct a BST from a preorder traversal
+- Check is a BT is BST or not
+- Find LCA of two nodes in BST
+- Find the inorder predecessor/successor of a given Key in BST.
