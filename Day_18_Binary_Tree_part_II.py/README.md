@@ -1,0 +1,8 @@
+- Level order Traversal / Level order traversal in spiral form
+- Height of a Binary Tree
+- Diameter of Binary Tree
+- Check if the Binary tree is height-balanced or not
+- LCA in Binary Tree
+- Check if two trees are identical or not
+- Zig Zag Traversal of Binary Tree
+- Boundary Traversal of Binary Tree
