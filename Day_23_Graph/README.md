@@ -1,3 +1,7 @@
 - BFS
 - DFS
 - Clone a graph (Not that easy as it looks)
+- Detect A cycle in Undirected Graph using BFS
+- Detect A cycle in Undirected Graph using DFS
+- Detect A cycle in a Directed Graph using DFS
+- Detect A cycle in a Directed Graph using BFS
