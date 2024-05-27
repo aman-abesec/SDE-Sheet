@@ -3,10 +3,12 @@
 - Clone a graph (Not that easy as it looks)
 - Detect A cycle in Undirected Graph using BFS
 - Detect A cycle in Undirected Graph using DFS
+- Topological Sort BFS
+  - Topological Sorting Applied for Direct acyclic graph
+  - Also called as Khans Algorithms.
+- Topological Sort DFS
 - Detect A cycle in a Directed Graph using DFS
 - Detect A cycle in a Directed Graph using BFS
-- Topological Sort BFS
-- Topological Sort DFS
 - Number of islands(Do in Grid and Graph Both)
 - Bipartite Check using BFS
 - Bipartite Check using DFS
