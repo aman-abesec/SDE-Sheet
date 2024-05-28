@@ -1,5 +1,6 @@
 - Strongly Connected Component(using KosaRajuΓÇÖs algo)
   - Valid only for Directed Graph
+  - If we revers the node of the graph then we can reach to each nodes.
 - DijkstraΓÇÖs Algorithm
 - Bellman-Ford Algo
 - Floyd Warshall Algorithm
