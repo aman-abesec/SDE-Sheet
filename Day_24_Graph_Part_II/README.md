@@ -1,0 +1,6 @@
+- Strongly Connected Component(using KosaRajuΓÇÖs algo)
+- DijkstraΓÇÖs Algorithm
+- Bellman-Ford Algo
+- Floyd Warshall Algorithm
+- MST using Prim's Algo
+- MST using KruskalΓÇÖs Algo
