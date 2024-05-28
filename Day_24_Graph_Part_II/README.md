@@ -1,4 +1,5 @@
 - Strongly Connected Component(using KosaRajuΓÇÖs algo)
+  - Valid only for Directed Graph
 - DijkstraΓÇÖs Algorithm
 - Bellman-Ford Algo
 - Floyd Warshall Algorithm
