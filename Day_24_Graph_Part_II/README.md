@@ -7,6 +7,8 @@
   - Its use heap
   - Not work incase of negative edges
 - Bellman-Ford Algo
+  - Used for finding min distance.
+  - Used in DG also use in UDG converting it into DG
 - Floyd Warshall Algorithm
 - MST using Prim's Algo
 - MST using KruskalΓÇÖs Algo
