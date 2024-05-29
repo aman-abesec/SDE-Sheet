@@ -2,6 +2,8 @@
   - Valid only for Directed Graph
   - If we revers the node of the graph then we can reach to each nodes.
 - DijkstraΓÇÖs Algorithm
+  - For Undirected Graph
+  - Its use heap
 - Bellman-Ford Algo
 - Floyd Warshall Algorithm
 - MST using Prim's Algo
