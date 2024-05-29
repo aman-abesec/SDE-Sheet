@@ -2,8 +2,10 @@
   - Valid only for Directed Graph
   - If we revers the node of the graph then we can reach to each nodes.
 - DijkstraΓÇÖs Algorithm
+  - Used for finding minimum distances
   - For Undirected Graph
   - Its use heap
+  - Not work incase of negative edges
 - Bellman-Ford Algo
 - Floyd Warshall Algorithm
 - MST using Prim's Algo
