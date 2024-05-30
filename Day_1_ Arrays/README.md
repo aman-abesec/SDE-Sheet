@@ -1,0 +1,4 @@
+- Pascal's Triangle
+- Next Permutations
+- Maximum Subarray
+- Set matrix Zeroes
