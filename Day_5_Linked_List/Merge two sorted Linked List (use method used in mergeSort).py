@@ -29,3 +29,25 @@ class Solution:
         else:
             tail.next=ptr1
         return head
+
+
+#============================
+#        Method2
+#============================
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        ans = ListNode()
+        temp = ans
+        temp1,temp2=list1,list2
+        while temp1!=None and temp2!=None:
+            if temp1.val<=temp2.val:
+                temp.next=temp1
+                temp=temp1
+                temp1=temp1.next
+            else:
+                temp.next=temp2
+                temp=temp2
+                temp2=temp2.next
+        if temp1==None:temp.next=temp2
+        else:temp.next=temp1
+        return ans.next
