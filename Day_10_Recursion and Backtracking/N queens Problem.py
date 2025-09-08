@@ -1,3 +1,24 @@
+# 📝 N-Queens Backtracking (Quick Notes)
+
+# Problem
+# Place N queens on an N×N chessboard.
+# No two queens should attack each other (not in same row, column, or diagonal).
+
+# Key Rules
+# Row → place only 1 queen per row.
+# Column → check no queen already in same column.
+# Diagonal → check:
+# |row1 - row2| == |col1 - col2|
+
+
+# (means they are on same diagonal).
+# Backtracking Steps
+
+# Start from row 0.
+# Try placing a queen in each column.
+# If position is safe → place queen & go to next row.
+# If not safe or stuck → backtrack (remove last queen, try another column).
+# If all rows filled → ✅ found a solution.
 #======================================================
 #      51. N-Queens
 #      https://leetcode.com/problems/n-queens/
@@ -62,3 +83,4 @@ def solveNQueens(n):
                 board[row][col] = "."
     backtrack(0)
     return solutions
+
