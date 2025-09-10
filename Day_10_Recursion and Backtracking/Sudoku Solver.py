@@ -27,6 +27,33 @@ class Solution:
         solve(grid)
 
 
+class Solution:
+    def solveSudoku(self, board: List[List[str]]) -> None:
+        def is_Valid(row,col,ch):
+            for i in range(9):
+                if board[row][i] == ch: return False
+                if board[i][col] == ch: return False
+            rowR,colC= 3*(row//3),3*(col//3)
+            for r in range(rowR,rowR+3):
+                for c in range(colC,colC+3):
+                    if board[r][c] == ch: return False
+            return True
+
+        def solve():
+            for r in range(9):
+                for c in range(9):
+                    if board[r][c]=='.':
+                        for chrt in map(str, range(1,10)):
+                            if is_Valid(r,c,chrt):
+                                board[r][c]=chrt
+                                if solve(): return True
+                                board[r][c]='.'
+                        return False
+            return True
+
+        solve()
+
 
 
         
+
