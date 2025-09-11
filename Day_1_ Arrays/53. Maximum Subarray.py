@@ -12,3 +12,12 @@ class Solution:
             if mx_now>=mx:
                 mx=mx_now
         return mx
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_n=0
+        ans=nums[0]
+        for i in nums:
+            max_n=max(max_n+i,i)
+            ans=max(ans,max_n)
+        return ans
