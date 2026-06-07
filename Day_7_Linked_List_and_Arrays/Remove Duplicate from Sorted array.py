@@ -17,3 +17,13 @@ class Solution:
         nums[c]=nums[i]
         c+=1
         return c
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        temp = 0
+        for i in range(len(nums)):
+            if nums[temp]==nums[i]:continue
+            else:
+                temp+=1
+                nums[temp],nums[i]=nums[i],nums[temp]
+        return temp+1
