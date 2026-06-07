@@ -43,3 +43,42 @@ class Solution:
             ohead=ohead.next
             chead=chead.next
         return curr
+
+
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if not head:
+            return None
+
+        # Step 1: Insert copied nodes after original nodes
+        curr = head
+        while curr:
+            new_node = Node(curr.val)
+            new_node.next = curr.next
+            curr.next = new_node
+            curr = new_node.next
+
+        # Step 2: Assign random pointers
+        curr = head
+        while curr:
+            copied_node = curr.next
+
+            if curr.random:
+                copied_node.random = curr.random.next
+
+            curr = copied_node.next
+
+        # Step 3: Separate original and copied list
+        curr = head
+        copied_head = head.next
+
+        while curr:
+            copied_node = curr.next
+            curr.next = copied_node.next
+
+            if copied_node.next:
+                copied_node.next = copied_node.next.next
+
+            curr = curr.next
+
+        return copied_head
