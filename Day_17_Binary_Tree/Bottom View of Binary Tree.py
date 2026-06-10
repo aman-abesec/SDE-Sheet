@@ -9,19 +9,15 @@
 from collections import deque
 class Solution:
     def bottomView(self, root):
-        ans=[]
-        if root==None:return ans
-        hash_map={}
-        q=deque()
-        hash_map[0]=root
+        q = deque()
+        hash_map = {}
         q.append([root,0])
         while q:
-            l=len(q)
-            n,k=q.popleft()
-            hash_map[k]=n
-            if n.left!=None:q.append([n.left,k-1])
-            if n.right!=None:q.append([n.right,k+1])
-        # hash_map.sort()
+            node,index = q.popleft()
+            hash_map[index]= node.data
+            if node.left!=None:q.append([node.left,index-1])
+            if node.right!=None:q.append([node.right,index+1])
+        ans = []
         for v in sorted(hash_map):
-            ans.append(hash_map[v].data)
+            ans.append(hash_map[v])
         return ans
