@@ -6,14 +6,13 @@
 #T-O(n)
 #S-O(n)
 class Solution:
-    def solve(self,root1,root2):
-        if root1==None and root2==None:return True
-        if root1==None or root2==None:return False
-        if root1.val==root2.val:
-            l=self.solve(root1.left,root2.left)
-            r=self.solve(root1.right,root2.right)
-            if l==True and r==True:return True
-            return False
-        else:return False
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        return self.solve(p,q)
+        def isSame(node1, node2):
+            if node1 is None and node2 is None:return True
+            if node1 is None or node2 is None or node1.val != node2.val:return False
+            return (
+                isSame(node1.left, node2.left)
+                and isSame(node1.right, node2.right)
+            )
+
+        return isSame(p, q)
