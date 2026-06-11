@@ -8,18 +8,16 @@
 #S-O(n)
 from collections import deque
 class Solution:
-    def topView(self,root):
-        if root==None:return []
-        ans=[]
-        hash_map={}
-        q=deque()
-        q.append([root,0])
-        while q:
-            node,n=q.popleft()
-            if n not in hash_map:
-                hash_map[n]=node
-            if node.left!=None:q.append([node.left,n-1])
-            if node.right!=None:q.append([node.right,n+1])
-        for v in sorted(hash_map):
-            ans.append(hash_map[v].data)
+    def topView(self, root):
+        hash_map = {}
+        que = deque()
+        que.append([root,0])
+        ans = []
+        while que:
+            node,index=que.popleft()
+            if index not in hash_map:hash_map[index]=node.data
+            if node.left:que.append([node.left,index-1])
+            if node.right:que.append([node.right,index+1])
+        for data in sorted(hash_map):
+            ans.append(hash_map[data])
         return ans
