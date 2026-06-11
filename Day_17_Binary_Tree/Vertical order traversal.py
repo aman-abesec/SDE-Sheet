@@ -10,32 +10,33 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-from collections import deque
 class Solution:
-    def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if root==None:return []
-        hash_map={}
-        q=deque()
-        q.append([root,0,0])
-        while q:
-            node,data,level=q.popleft()
-            if data not in hash_map:
-                hash_map[data]={level:[node.val]}
-            else:
-                if level not in hash_map[data]:
-                    hash_map[data][level]=[node.val]
-                else:
-                    hash_map[data][level]+=[node.val]
-            if node.left!=None:q.append([node.left,data-1,level+1])
-            if node.right!=None:q.append([node.right,data+1,level+1])
-        ans={}
-        for i in sorted(hash_map):
-            for j in sorted(hash_map[i]):
-                if i not in ans:
-                    ans[i]=sorted(hash_map[i][j])
-                else:
-                    ans[i]+=sorted(hash_map[i][j])
-        return [ans[i] for i in sorted(ans)]
+    def verticalTraversal(
+        self, root: Optional[TreeNode]
+    ) -> List[List[int]]:
+        if root is None:
+            return []
+        nodes = []
+        stack = [(root, 0, 0)]  # node, row, column
+        while stack:
+            node, row, col = stack.pop()
+            nodes.append((col, row, node.val))
+            if node.left:
+                stack.append((node.left, row + 1, col - 1))
+            if node.right:
+                stack.append((node.right, row + 1, col + 1))
+        nodes.sort()
+
+        result = []
+        previous_col = None
+        for col, row, value in nodes:
+            if col != previous_col:
+                result.append([])
+                previous_col = col
+
+            result[-1].append(value)
+
+        return result
 
 
         
